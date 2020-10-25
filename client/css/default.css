@@ -1,0 +1,21 @@
+body{
+    background-color: lightgrey;
+}
+
+.game-list{
+    background-color: #99ff99;
+    border: 2px solid black;
+    min-width: 75%;
+}
+
+.game-list-item{
+    background-color: #ccffcc;
+    color: black;
+    border: 1px solid black;
+    min-height: 50px;
+    text-align: center;
+}
+
+#account-link{
+    text-align: right;
+}
