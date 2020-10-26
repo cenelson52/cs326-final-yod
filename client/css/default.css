@@ -30,6 +30,7 @@ body{
     background-color: #99ff99;
     border: 2px solid black;
     min-width: 75%;
+    min-height: 200px;
 }
 
 .team-list{
