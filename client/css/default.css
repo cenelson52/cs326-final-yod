@@ -1,21 +1,51 @@
+#account-link{
+    text-align: right;
+}
+
 body{
     background-color: lightgrey;
+}
+
+.btn{
+    outline: 1px solid lightgrey;
+}
+
+.right-align{
+    justify-content: right;
+    text-align: right;
+}
+
+.med-entry{
+    min-width: 400px;
+    min-height: 75px;
+}
+
+.large-entry{
+    min-width: 500px;
+    min-height: 100px;
+}
+
+.notes-proportions{
+    min-height: 300px;
+    min-width: 200px;
 }
 
 .game-list{
     background-color: #99ff99;
     border: 2px solid black;
     min-width: 75%;
+    min-height: 200px;
+}
+
+.team-list{
+    background-color: #0affc2;
+    border: 2px solid black;
+    width: 200px;
+    min-height: 100px;
 }
 
 .game-list-item{
-    background-color: #ccffcc;
-    color: black;
     border: 1px solid black;
     min-height: 50px;
     text-align: center;
-}
-
-#account-link{
-    text-align: right;
 }
