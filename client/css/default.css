@@ -6,6 +6,10 @@ body{
     background-color: lightgrey;
 }
 
+.btn{
+    outline: 1px solid lightgrey;
+}
+
 .right-align{
     justify-content: right;
     text-align: right;
