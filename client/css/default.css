@@ -6,10 +6,6 @@ body{
     background-color: lightgrey;
 }
 
-.small-text-entry{
-
-}
-
 .med-text-entry{
     min-width: 400px;
     min-height: 75px;
@@ -27,8 +23,6 @@ body{
 }
 
 .game-list-item{
-    background-color: #ccffcc;
-    color: black;
     border: 1px solid black;
     min-height: 50px;
     text-align: center;
