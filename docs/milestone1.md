@@ -7,6 +7,21 @@
 - Create and record custom stats
 - View player stats
 
+## Division of Labor
+- Joe O'Leary
+    - Rough Draft Screenshots and Division of Labor on Markdown Doc
+    - CSS
+    - HTML for Homepage, GameCreate, Match, Game 
+- Dang Le Nguyen
+    - Wireframes
+    - CSS
+    - HTML for Account, AccountCreate
+- Connor Nelson
+    - Data Interactions on Markdown Doc
+    - Wireframes
+    - CSS
+    - HTML for Homepage, GameCreate, Match, TourneyCreate, Tourney
+
 ## Rough Draft Screenshots
 - Homepage:
 
