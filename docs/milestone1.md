@@ -9,5 +9,5 @@
 
 ## Rough Draft Screenshots
 - Homepage:
-- Account Page: ![Screenshot of Account Page](./images/Account.png?raw=true)
-- Account Creation Page: ![Screenshot of Account Creation Page](./images/AccountCreate.png?raw=true)
+- Account Page: ![Screenshot of Account Page](./images/Account.png)
+- Account Creation Page: ![Screenshot of Account Creation Page](./images/AccountCreate.png)
