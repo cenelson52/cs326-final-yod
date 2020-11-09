@@ -3,6 +3,7 @@
 let games = [
     {
         'name' : 'gameEx',
+        'id' : 0,
         'description' : "a game",
         'players' : [
             {
@@ -58,7 +59,16 @@ let games = [
             }
         ]
     }
-]
+];
 
+
+let accounts = [
+    {
+        'username' : 'user123',
+        'password' : 'badpassword123',
+        'email' : 'example@gmail.com',
+        'game-ids' : [0]
+    }
+];
 
 

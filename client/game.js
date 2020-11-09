@@ -4,6 +4,7 @@
 //retrieve the game
 let game = games[0];//temp
 
+document.getElementById('titlespot').innerText = game.name;
 
 //takes in player object and returns a div
 function buildPlayerDiv(player){
@@ -13,8 +14,9 @@ function buildPlayerDiv(player){
     div.innerText = '   ' + player.name;
     const stats = document.createElement('div');
     stats.classList.add('player-stats');
+    stats.innerHTML += '|'
     for(let i in player.stats){
-        stats.innerHTML += ('   ' + i + ' : ' + player.stats[i] + ', ');
+        stats.innerHTML += ('   ' + i + ' : ' + player.stats[i] + ' |');
     }
     div.appendChild(stats);
     
