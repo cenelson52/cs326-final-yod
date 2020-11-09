@@ -29,7 +29,34 @@ let games = [
         'custome-stats' : [
             'kills', 'deaths', 'assists'
         ],
-
+        'matches' : [
+            {
+                'team1' : {
+                    'won' : true,
+                    'players' : [{
+                        'name' : 'Jim',
+                        'stats': {
+                            'kills' : 10,
+                            'deaths' : 8,
+                            'assists' : 0
+                        }
+                    }]
+                },
+                'team2' : {
+                    'won' : false,
+                    'players' : [
+                        {
+                        'name' : 'Bobs',
+                        'stats': {
+                            'kills' : 8,
+                            'deaths' : 10,
+                            'assists' : 0
+                        }
+                    }
+                ]
+                }
+            }
+        ]
     }
 ]
 
