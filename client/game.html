@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src = 'dataExs.js' defer></script>
+        <script src = 'game.js' defer></script>
         <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
         <title>GAME</title><!--Will be the title of the actual game when the site is finished-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -16,7 +18,7 @@
         </div>
         <hr><br>
         <div class='row'>
-            <h3 class='col-10' id='titlespot'>Game Title</h3><!--Will be the title of the actual game when the site is finished-->
+            <h3 class='col-10' id='titlespot'></h3><!--Will be the title of the actual game when the site is finished-->
             <button class='col btn btn-light' id='edit'>Edit</button>
             <button class='col btn btn-light' id='share'>Share</button>
         </div>
@@ -24,7 +26,10 @@
         <div class='row'>
             <div class='col-4'>
                 <h4 class='row'>Players</h4><!--NEED TO ADD THE SEARCH FUNCTION-->
-                <div class='row list-group team-list'></div><br>
+                <div class='row list-group team-list' id = 'player-list'>
+                    
+                </div><br>
+                <input id = 'new-player-name' class = 'row form-control' placeholder="New Player Name">
                 <button class='row btn btn-light' id='newplayer'>Add Player</button>
             </div>
             <div class='col'>
