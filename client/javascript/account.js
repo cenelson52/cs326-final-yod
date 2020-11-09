@@ -8,3 +8,4 @@ window.onload = function(() =>
     document.getElementById('email').innerHTML = account.email;
     document.getElementById('DoB').innerHTML = account.DoB;
 );
+*/
