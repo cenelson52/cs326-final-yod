@@ -35,21 +35,3 @@ document.getElementById('create-account').addEventListener('click', () => {
     }
     //auto-redirect to the account view page somehow
 });
-
-document.getElementById('newgamebtn').addEventListener('click', () => {
-    const game = {}
-    const name = document.getElementById('name').value;
-    const desc = document.getElementById('description').value
-    if(name === ''){
-        alert('no name entered');
-    }else{
-        game['name'] = name;
-        game['description'] = desc;
-        game['custom-stats'] = stats;
-        game['players'] = [];
-        console.log(game);
-
-        //this is where the game will be saved into db
-    }
-    //needs to lead to game page
-});
