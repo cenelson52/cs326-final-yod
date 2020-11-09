@@ -2,20 +2,20 @@
 
 ## Division of Labor
 - Joseph O'Leary
-    - accountcreate.js, account.js, 
-    - Division of Labor, API Flowchart
+    - accountcreate.js, account.js, homepage.js
+    - Division of Labor, API Flowchart, 
     
 - Connor Nelson
-    - some stuff I haven't checked commit logs yet
+    - gamecreate.js, game.js, match.js
 
 - Dang Le Nguyen
-    - server.js and database.js and probably more haven't checked commit logs yet
+    - server.js and database.js
+    - tourney.js, tourneycreate.js
 
 ## API Documentation
 Flowchart:
 
 ![API Documentation Flowchart](./images/flowchart.png)
-
 
 ## Screenshots
 
