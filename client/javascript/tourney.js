@@ -16,8 +16,8 @@ function renderTournament(element){
     }
 }
 
-button.addEventListener('back-to-home', event => {
-  onClick="location.href='*****Whatever the homepage url is****'" //TODO: Correct this
+document.getElementById('back-to-home').addEventListener('click', () => {
+  <a href="*****Whatever the homepage url is****"></a>   //TODO: Look for a working example
 });
 
 //TODO: Edit Tourney Button
