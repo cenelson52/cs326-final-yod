@@ -1,5 +1,5 @@
 
-database = {
+let database = {
   account: [],
   games: []
 };
