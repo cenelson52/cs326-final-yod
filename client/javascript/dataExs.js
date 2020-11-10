@@ -70,6 +70,7 @@ let accounts = [
         'username' : 'user123',
         'password' : 'badpassword123',
         'email' : 'example@gmail.com',
+        'DoB' : '11-01-1990',
         'game-ids' : [0]
     }
 ];
