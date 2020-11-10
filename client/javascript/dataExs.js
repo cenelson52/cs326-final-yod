@@ -32,8 +32,10 @@ let games = [
         ],
         'matches' : [
             {
+                'match-notes' : 'good game',
                 'team1' : {
                     'won' : true,
+                    'score' : 10,
                     'players' : [{
                         'name' : 'Jim',
                         'stats': {
@@ -45,6 +47,7 @@ let games = [
                 },
                 'team2' : {
                     'won' : false,
+                    'score' : 8,
                     'players' : [
                         {
                         'name' : 'Bobs',
