@@ -33,6 +33,5 @@ Flowchart:
     - Users update their match statistics by joining more matches.
 
 - Delete
-    - 
 
 ## [Heroku Link](https://cs326final-yod.herokuapp.com/)
