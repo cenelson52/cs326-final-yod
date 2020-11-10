@@ -1,8 +1,8 @@
 'use strict'
 
-const matches = JSON.parse(await fetch("/match"));
+const matches = await fetch("/match");
 
-const games = JSON.parse(await fetch("/getgames"));
+const games = await fetch("/getgames");
 
 function renderGames(element){
     for(const x in games){
@@ -27,4 +27,3 @@ window.onload(()=>
     renderGames(document.getElementById("fullgamelist"));
     renderMatches(document.getElementById("resultgamelist"));
 );
-*/
