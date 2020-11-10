@@ -1,8 +1,8 @@
 'use strict'
 
-const response = await fetch("/account");
-if (!response.ok) {
-    console.log(response.error);
+const accountlist = await fetch("/account");
+if (!accountlist.ok) {
+    console.log(accountlist.error);
     return;
 }
 
@@ -33,6 +33,19 @@ document.getElementById('create-account').addEventListener('click', () => {
         return;
     }
     else{
+         
+        for(let i = 0; i < accountlist.length; ++i){
+            if(document.getElementById("account-username").value === accountlist[i].username){
+                alert('Username already exists!');
+                return;
+             }
+             if(document.getElementById("account-email").value === accountlist[i].email){
+                alert('Email already being used!');
+                return;
+             }
+         }
+        
+        
         const account = {};
         account['username'] = document.getElementById("account-username").value;
         account['password'] = document.getElementById("account-password").value;
