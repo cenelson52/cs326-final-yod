@@ -19,10 +19,9 @@ createServer(async (req, res) => {
     else if(parsed.pathname === '/creategame'){
         res.end(JSON.stringify(req.game));//assumes that /creategame is sending a game object, and returns it right back after the saving process (which does not exist for the dummy server)
     }
-    else if(parsed.pathname === '/match'){
-
+    else if(parsed.pathname === '/match'){//returns array of matches based off of a given game, but this requires an actual game to exist, which doesn't as there's no actual games so idk what to do
     }
-    else if(parsed.pathname === '/creatematch'){
+    else if(parsed.pathname === '/creatematch'){//idk how to update an existing game unless we have an actual active database, which we do not :(
 
     }
     else if(parsed.pathname === '/account'){
