@@ -33,5 +33,6 @@ Flowchart:
     - Users update their match statistics by joining more matches.
 
 - Delete
+    - The delete function exists in database.js and can delete objects.
 
 ## [Heroku Link](https://cs326final-yod.herokuapp.com/)
