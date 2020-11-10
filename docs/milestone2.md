@@ -12,7 +12,7 @@
     - Heroku
     
 - Dang Le Nguyen
-    - server.js and database.js, dataExs.js
+    - server.js, database.js, dataExs.js
     - tourney.js, tourneycreate.js, account.js, accountcreate.js
     - searched for Heroku issues
 
