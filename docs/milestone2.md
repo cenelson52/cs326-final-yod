@@ -15,6 +15,7 @@
     - server.js and database.js
     - tourney.js, tourneycreate.js, account.js, accountcreate.js
     - dataExs.js
+    - searched for Heroku issues
 
 ## API Documentation
 Flowchart:
