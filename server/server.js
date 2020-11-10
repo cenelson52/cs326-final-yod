@@ -24,8 +24,12 @@ createServer(async (req, res) => {
     else if(parsed.pathname === '/creatematch'){//idk how to update an existing game unless we have an actual active database, which we do not :(
 
     }
+    
     else if(parsed.pathname === '/account'){
-
+        res.end(JSON.stringify(
+            //TODO: THIS IS CONNECTED WITH THE LOGIN. Using default for now.
+            database.accounts[0];
+        ));
     }
     else if(parsed.pathname === '/createaccount'){
 
