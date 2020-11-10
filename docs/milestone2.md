@@ -23,5 +23,16 @@ Flowchart:
 
 ## Screenshots
 
+Create
+An user creates their account by entering the information in the fields provided.
+
+Read
+The page reads if an username or email already taken.
+
+Update
+
+
+Delete
+
 
 ## [Heroku Link](https://cs326final-yod.herokuapp.com/)
