@@ -7,7 +7,7 @@ import {writeFile, readFileSync, existsSync} from 'fs';
 const file = await fetch("/database.json");
 const app = express();
 
-
+/*
 let database;
 if (existsSync("database.json")) {
     database = JSON.parse(readFileSync("database.json"));
@@ -17,7 +17,7 @@ if (existsSync("database.json")) {
         games: []
     };
 }
-
+*/
 
 createServer(async (req, res) => {
     const parsed = parse(req.url, true);
@@ -53,7 +53,7 @@ createServer(async (req, res) => {
     else if(parsed.pathname === '/account'){
         res.end(JSON.stringify(
             //TODO: THIS IS CONNECTED WITH THE LOGIN.
-            database.accounts
+            file.accounts
         ));
     }
     else if(parsed.pathname === '/createaccount'){
@@ -62,13 +62,13 @@ createServer(async (req, res) => {
         req.on('data', data => body += data);
         req.on('end', () => {
             const data = JSON.parse(body);
-            database.accounts.push({
+            file.accounts.push({
                 username: data.username,
                 password: data.password,
                 email: data.email,
                 DoB: data.DoB
             });
-            writeFile("database.json", JSON.stringify(database), err => {
+            writeFile(file, JSON.stringify(file), err => {
                 if (err) {
                     console.err(err);
                 } else res.end();
