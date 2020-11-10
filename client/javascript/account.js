@@ -3,6 +3,16 @@
 
 const account = however-we-get-the-account;
 
+window.onload = function(() => 
+    document.getElementById('username').innerHTML = account.username;
+    document.getElementById('email').innerHTML = account.email;
+    document.getElementById('DoB').innerHTML = account.DoB;
+);
+*/
+
+
+/*
+
 ALTERNATIVE?
 const response = await fetch("/account");
 if (!response.ok) {
@@ -11,9 +21,11 @@ if (!response.ok) {
 }
 
 window.onload = function(() => 
-    document.getElementById('username').innerHTML = account.username;
-    document.getElementById('email').innerHTML = account.email;
-    document.getElementById('DoB').innerHTML = account.DoB;
+    document.getElementById('username').innerHTML = response.username;
+    document.getElementById('email').innerHTML = response.email;
+    document.getElementById('DoB').innerHTML = response.DoB;
 );
+
+
 */
 
