@@ -2,6 +2,8 @@ import {createServer} from 'http';
 import {parse} from 'url';
 import * as _express from "express";
 import * as faker from "faker";
+
+const file = await fetch("/database.js");
 const app = express();
 
 createServer(async (req, res) => {
@@ -17,12 +19,21 @@ createServer(async (req, res) => {
         res.end(JSON.stringify({'name': req.name, 'players': [faker.name, faker.name, faker.name]}));
     }
     else if(parsed.pathname === '/creategame'){
-        res.end(JSON.stringify(req.game));//assumes that /creategame is sending a game object, and returns it right back after the saving process (which does not exist for the dummy server)
+        res.end(JSON.stringify(req.game));//assumes that /creategame is sending a game object, and returns it right back after the saving process
     }
-    else if(parsed.pathname === '/match'){
-
+    else if(parsed.pathname === '/match'){//returns array of matches based off of a given game
+        if (! "game" in req.body){
+            const matches = [];
+            for(let x = 0; x < file.games.length; x++){
+                matches.push(file.games[x].matches);
+            }
+            res.end(JSON.stringify(matches));
+        }
+        else{
+            res.end(JSON.stringify(file.games.matches));
+        }
     }
-    else if(parsed.pathname === '/creatematch'){
+    else if(parsed.pathname === '/creatematch'){//idk how to update an existing game unless we have an actual active database, which we do not :(
 
     }
     
@@ -52,14 +63,4 @@ createServer(async (req, res) => {
                 } else res.end();
             });
         });
-        
-        
-    }
-    else if(parsed.pathname === '/tourney'){
-
-    }
-    else if(parsed.pathname === '/tourneycreate'){
-
-    }
-    
 }).listen(process.env.PORT || 8080);
