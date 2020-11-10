@@ -19,8 +19,9 @@ if (!response.ok) {
     return;
 }
 
+//using first account entry. Will get an error if null.
 window.onload = function(() => 
-    document.getElementById('username').innerHTML = response.username;
-    document.getElementById('email').innerHTML = response.email;
-    document.getElementById('DoB').innerHTML = response.DoB;
+    document.getElementById('username').innerHTML = response[0].username;
+    document.getElementById('email').innerHTML = response[0].email;
+    document.getElementById('DoB').innerHTML = response[0].DoB;
 );
