@@ -9,3 +9,23 @@ window.onload = function(() =>
     document.getElementById('DoB').innerHTML = account.DoB;
 );
 */
+
+
+/*
+
+ALTERNATIVE?
+const response = await fetch("/account");
+if (!response.ok) {
+    console.log(response.error);
+    return;
+}
+
+window.onload = function(() => 
+    document.getElementById('username').innerHTML = response.username;
+    document.getElementById('email').innerHTML = response.email;
+    document.getElementById('DoB').innerHTML = response.DoB;
+);
+
+
+*/
+

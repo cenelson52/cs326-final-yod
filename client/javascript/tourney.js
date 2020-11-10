@@ -4,8 +4,7 @@
 
 const tournament = *thing used to get tournament*
 
-
-//TODO: Change tourney page to reflect this or change this to reflect tourney page. Depends on how Edit Tourney Button is ultimately set up.
+//change this function if using class = 'row' id = 'bracket'
 function renderTournament(element){
     for(const x in tournaments){
         const newDiv = document.createElement("div");

@@ -30,4 +30,11 @@ createServer(async (req, res) => {
     else if(parsed.pathname === '/createaccount'){
 
     }
+    else if(parsed.pathname === '/tourney'){
+
+    }
+    else if(parsed.pathname === '/tourneycreate'){
+
+    }
+    
 }).listen(process.env.PORT || 8080);
