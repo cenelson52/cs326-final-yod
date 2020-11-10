@@ -4,6 +4,18 @@ import * as _express from "express";
 import * as faker from "faker";
 const app = express();
 
+
+let database;
+if (existsSync("database.json")) {
+    database = JSON.parse(readFileSync("database.json"));
+} else {
+    database = {
+        accounts: [],
+        games: []
+    };
+}
+
+
 createServer(async (req, res) => {
     const parsed = parse(req.url, true);
     if(parsed.pathname === '/getgames'){
