@@ -10,10 +10,9 @@ window.onload = function(() =>
 );
 */
 
+strict;
 
-/*
-
-ALTERNATIVE?
+//ALTERNATIVE?
 const response = await fetch("/account");
 if (!response.ok) {
     console.log(response.error);
@@ -25,7 +24,3 @@ window.onload = function(() =>
     document.getElementById('email').innerHTML = response.email;
     document.getElementById('DoB').innerHTML = response.DoB;
 );
-
-
-*/
-
