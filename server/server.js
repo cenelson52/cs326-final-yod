@@ -25,8 +25,12 @@ createServer(async (req, res) => {
     else if(parsed.pathname === '/creatematch'){
 
     }
+    
     else if(parsed.pathname === '/account'){
-
+        res.end(JSON.stringify(
+            //TODO: THIS IS CONNECTED WITH THE LOGIN. Using default for now.
+            database.accounts[0];
+        ));
     }
     else if(parsed.pathname === '/createaccount'){
 
