@@ -27,7 +27,7 @@ let games = [
                 }
             }
         ],
-        'custome-stats' : [
+        'custom-stats' : [
             'kills', 'deaths', 'assists'
         ],
         'matches' : [
@@ -50,7 +50,7 @@ let games = [
                     'score' : 8,
                     'players' : [
                         {
-                        'name' : 'Bobs',
+                        'name' : 'Bob',
                         'stats': {
                             'kills' : 8,
                             'deaths' : 10,

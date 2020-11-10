@@ -16,10 +16,17 @@ function buildPlayerDiv(player){
     div.innerText = player.name;
     div.innerHTML += '  -  wins : ' + player.wins + ' | losses : ' + player.losses ;
     
-
-    
-
     return div;
+}
+function buildTeamPlayerDiv(player){
+    const div = document.createElement('div');
+    div.classList.add('player');
+    div.classList.add('row-4');
+    const stats = document.createElement('div');
+    stats.classList.add('player-stats');
+    for(let i in game["custom-stats"]){
+        
+    }
 }
 
 for(let i in availplayers){
@@ -29,8 +36,8 @@ for(let i in availplayers){
 function renderPlayers(){
     
     document.getElementById('playerlist').innerHTML = '';
-    document.getElementById('team1').innerHTML = '';
-    document.getElementById('team2').innerHTML = '';
+    // document.getElementById('team1').innerHTML = '';
+    // document.getElementById('team2').innerHTML = '';
     pts();
     printTeam(team0);
     printTeam(team1);
@@ -38,12 +45,12 @@ function renderPlayers(){
         //console.log(team0[i]);
         document.getElementById('playerlist').appendChild(team0[i]);
     }
-    for(let i in team1){
-        document.getElementById('team1').appendChild(team1[i]);
-    }
-    for(let i in team2){
-        document.getElementById('team2').appendChild(team2[i]);
-    }
+    // for(let i in team1){
+    //     document.getElementById('team1').appendChild(team1[i]);
+    // }
+    // for(let i in team2){
+    //     document.getElementById('team2').appendChild(team2[i]);
+    // }
 }
 
 renderPlayers();
@@ -139,4 +146,15 @@ document.getElementById('team2').addEventListener('click', () => {
         
     }
     renderPlayers();
+});
+
+document.getElementById('submit').addEventListener('click', () => {
+    const match = {
+        'match-notes' : document.getElementById('notes').value,
+        'team1' : {},
+        'team2' : {}
+    };
+    if(document.getElementById('team-1-won').checked){
+        
+    }
 });

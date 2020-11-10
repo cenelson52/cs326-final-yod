@@ -3,3 +3,11 @@
 .match{
     border: 1px solid black;
 }
+.winner{
+    background-color: green;
+    border: 1px solid black;
+}
+.loser{
+    background-color: red;
+    border: 1px solid black;
+}
