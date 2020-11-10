@@ -1,8 +1,8 @@
 'use strict'
 
-const matches = await fetch("/match");
+const matches = JSON.parse(await fetch("/match"));
 
-const games = await fetch("/getgames");
+const games = JSON.parse(await fetch("/getgames"));
 
 function renderGames(element){
     for(const x in games){

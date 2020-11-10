@@ -3,7 +3,7 @@ import {parse} from 'url';
 import * as _express from "express";
 import * as faker from "faker";
 
-const file = await fetch("/database.js");
+const file = await fetch("/database.json");
 const app = express();
 
 
@@ -21,17 +21,18 @@ if (existsSync("database.json")) {
 createServer(async (req, res) => {
     const parsed = parse(req.url, true);
     if(parsed.pathname === '/getgames'){
-        let body = [];
-        for(let x = 0; x < 5; x++){
-            body.push({'name': faker.companyName, 'players': [faker.name, faker.name, faker.name]});
-        }
-        res.end(JSON.stringify(body));
+        res.end(JSON.stringify(file.games));
     }
     else if(parsed.pathname === '/game'){
-        res.end(JSON.stringify({'name': req.name, 'players': [faker.name, faker.name, faker.name]}));
+        for(let x = 0; x < file.games.length; x++){
+            if(file.games[x].name === req.game){
+                res.end(JSON.stringify(file.games[x]));
+            }
+        }
+        res.end("no game");
     }
     else if(parsed.pathname === '/creategame'){
-        res.end(JSON.stringify(req.game));//assumes that /creategame is sending a game object, and returns it right back after the saving process
+        //TODO
     }
     else if(parsed.pathname === '/match'){//returns array of matches based off of a given game
         if (! "game" in req.body){
@@ -46,9 +47,8 @@ createServer(async (req, res) => {
         }
     }
     else if(parsed.pathname === '/creatematch'){//idk how to update an existing game unless we have an actual active database, which we do not :(
-
+        //TODO
     }
-    
     else if(parsed.pathname === '/account'){
         res.end(JSON.stringify(
             //TODO: THIS IS CONNECTED WITH THE LOGIN.
@@ -56,7 +56,6 @@ createServer(async (req, res) => {
         ));
     }
     else if(parsed.pathname === '/createaccount'){
-
         //not sure if this actually works correctly
         let body = '';
         req.on('data', data => body += data);
@@ -68,7 +67,6 @@ createServer(async (req, res) => {
                 email: data.email,
                 DoB: data.DoB
             });
-            
             writeFile("database.json", JSON.stringify(database), err => {
                 if (err) {
                     console.err(err);
