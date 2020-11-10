@@ -4,11 +4,12 @@
 - Joseph O'Leary
     - accountcreate.js, account.js, homepage.js
     - server.js
-    - Division of Labor, API Flowchart, 
+    - Division of Labor, API Flowchart, helping w/ Heroku 
     
 - Connor Nelson
     - gamecreate.js, game.js, match.js
     - server.js
+    - Heroku
 
 - Dang Le Nguyen
     - server.js and database.js
@@ -21,4 +22,5 @@ Flowchart:
 
 ## Screenshots
 
-## Heroku Link
+
+## [Heroku Link](https://cs326final-yod.herokuapp.com/)
