@@ -3,10 +3,12 @@
 ## Division of Labor
 - Joseph O'Leary
     - accountcreate.js, account.js, homepage.js
+    - server.js
     - Division of Labor, API Flowchart, 
     
 - Connor Nelson
     - gamecreate.js, game.js, match.js
+    - server.js
 
 - Dang Le Nguyen
     - server.js and database.js

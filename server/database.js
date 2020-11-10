@@ -1,5 +1,5 @@
 
 let database = {
-  account: [],
+  accounts: [],
   games: []
 };
