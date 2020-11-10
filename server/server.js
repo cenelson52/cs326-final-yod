@@ -25,11 +25,35 @@ createServer(async (req, res) => {
     else if(parsed.pathname === '/creatematch'){
 
     }
+    
     else if(parsed.pathname === '/account'){
-
+        res.end(JSON.stringify(
+            //TODO: THIS IS CONNECTED WITH THE LOGIN.
+            database.accounts
+        ));
     }
     else if(parsed.pathname === '/createaccount'){
 
+        //not sure if this actually works correctly
+        let body = '';
+        req.on('data', data => body += data);
+        req.on('end', () => {
+            const data = JSON.parse(body);
+            database.accounts.push({
+                username: data.username,
+                password: data.password,
+                email: data.email,
+                DoB: data.DoB
+            });
+            
+            writeFile("database.json", JSON.stringify(database), err => {
+                if (err) {
+                    console.err(err);
+                } else res.end();
+            });
+        });
+        
+        
     }
     else if(parsed.pathname === '/tourney'){
 

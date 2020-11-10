@@ -1,6 +1,13 @@
 'use strict'
 
+const response = await fetch("/account");
+if (!response.ok) {
+    console.log(response.error);
+    return;
+}
+
 document.getElementById('create-account').addEventListener('click', () => {
+    
     if(document.getElementById("account-username").value === '' ){
         alert('No username entered!');
         return;
@@ -32,6 +39,21 @@ document.getElementById('create-account').addEventListener('click', () => {
         account['email'] = document.getElementById("account-email").value;
         account['birthday'] = document.getElementById("account-DoB").value;
         // this is where we save the account into the db
+        
+        const response = await fetch('/createaccount', {
+            method: 'POST',
+            body: JSON.stringify({
+                username: account['username'],
+                password: account['password'],
+                email: account['email'],
+                DoB: account['birthday']
+            })
+         });
+        
+         if (!response.ok) {
+            console.error(`Error in accountcreate.js storing into database.`);
+         }
+        
     }
     //auto-redirect to the account view page somehow
 });

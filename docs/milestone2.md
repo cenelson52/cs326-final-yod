@@ -9,10 +9,12 @@
 - Connor Nelson
     - gamecreate.js, game.js, match.js
     - server.js
+    - dataExs.js
 
 - Dang Le Nguyen
     - server.js and database.js
-    - tourney.js, tourneycreate.js
+    - tourney.js, tourneycreate.js, account.js, accountcreate.js
+    - dataExs.js
 
 ## API Documentation
 Flowchart:
