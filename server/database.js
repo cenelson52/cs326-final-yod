@@ -1,9 +1,4 @@
 
-let database = {
-  accounts: [],
-  games: []
-};
-
 
 function insert(arr, index, object){
   if(! (Array.isArray(arr)) ){
