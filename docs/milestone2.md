@@ -27,7 +27,7 @@ Flowchart:
     - Users create their account by entering the information in the fields provided.
 
 - Read
-    - The page reads if an username or email already taken.
+    - The page reads whether an username or email is already taken.
 
 - Update
     - Users update their match statistics by joining more matches.
