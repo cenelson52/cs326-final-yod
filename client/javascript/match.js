@@ -5,7 +5,7 @@
 const game = games[0];
 const availplayers = game.players;
 const teams = [[],[],[]];
-let selectedplayer = {'player' : null,'div' : null, 'team' : null}; //0 = no team, else its team #
+let selectedplayer = {'player' : null,'div' : null, 'team' : null}; //0 = no team, else its team #i
 
 
 function buildPlayerDiv(player){
@@ -27,7 +27,6 @@ function buildTeamPlayerDiv(player){
     div.innerText = player.name;
     const stats = document.createElement('div');
     stats.classList.add('player-stats');
-    //stats.innerHTML += 'wins : ' + player.wins + ' | losses : ' + player.losses + '<br>';
     stats.innerHTML += '|';
     for(let i in player.stats){
         stats.innerHTML += ( i + ' : ' + player.stats[i] + '|');
@@ -47,13 +46,8 @@ function renderPlayers(){
     document.getElementById('playerlist').innerHTML = '';
     document.getElementById('team1').innerHTML = '';
     document.getElementById('team2').innerHTML = '';
-    // document.getElementById('team1').innerHTML = '';
-    // document.getElementById('team2').innerHTML = '';
 
-    printTeam(teams[0]);
-    printTeam(teams[1]);
     for(let i in teams[0]){
-        //console.log(team0[i]);
         document.getElementById('playerlist').appendChild(buildPlayerDiv(teams[0][i]));
     }
     for(let j = 1; j <=2; j++){
@@ -83,7 +77,6 @@ function addSelection(){
                 if(selectedplayer.div !== null){
                     deselect();
                 }
-                console.log(playerdivs[i]);
                 select(playerdivs[i]);
             }
         });
@@ -99,13 +92,7 @@ function getIndex(array, el){
     return -1;
 }
 
-
-//debuging functions
-function pts(){
-    // console.log('team0: ' + team0.length+ ' '+ team0);
-    // console.log('team1: ' +  team1.length+ ' '+team1);
-    // console.log('team2: ' +  team2.length+ ' '+team2);
-}
+//debug function
 function printTeam(team){
     console.log('-');
     for(let i in team){
@@ -148,6 +135,18 @@ function getPfromDiv(div){
     }
     return null;
 }
+
+function getTPfromDiv(div){
+    for(let j = 1; j <3; j++){
+        for(let i in teams[j]){
+            if(teams[j][i].name === div.id){
+            return teams[j][i];
+            }
+        }
+    }
+    return null;
+}
+
 function fillgaps(arr){
     const r = [];
     for(let i in arr){
@@ -188,35 +187,69 @@ document.getElementById('team2').addEventListener('click', () => {
     renderPlayers();
 });
 
-
+let toEdit = null;//player type
 function addTeamPlListener(){
     const teamPl = document.getElementsByClassName('team-player');
 
     for(let i = 0; i < teamPl.length; i++){
         teamPl[i].addEventListener('click', () => {
+            toEdit = getTPfromDiv(teamPl[i]);
             document.getElementById('stat-space').innerHTML = teamPl[i].id + "<br>";
-            // const name = document.createElement('div');
-            // name.innerText = teamPl[i].id;
             for(let j in game['custom-stats']){
-                document.getElementById('stat-space').innerHTML += "<label for id = '" + game['custom-stats'][j] +"-box' >" + game['custom-stats'][j] + "</label>";
-                document.getElementById('stat-space').innerHTML += "<input type = 'number' id =" + game['custom-stats'][j] +"-box' >";
+                document.getElementById('stat-space').innerHTML += "<label for = '" + game['custom-stats'][j] +"-box' >" + game['custom-stats'][j] + "</label>";
+                document.getElementById('stat-space').innerHTML += "<input type = 'number' id = '" + game['custom-stats'][j] +"-box' >";
             }
-
+            document.getElementById('stat-space').innerHTML += "<br><input type = 'button' id = 'statUpdtBtn' class = 'btn btn-light'>Update</input>";
+            document.getElementById('statUpdtBtn').addEventListener('click', () => {
+                for(let j in game['custom-stats']){
+                    const n = document.getElementById(game['custom-stats'][j] + '-box').value;
+                    if(n !== ''){
+                        toEdit.stats[game['custom-stats'][j]] = parseInt(n);
+                    }
+                }
+                renderPlayers();
+            });
         });
     }
 }
 
 
 
+
 document.getElementById('submit').addEventListener('click', () => {
+    const team1score = document.getElementById('team-1-score').value;
+    const team2score = document.getElementById('team-2-score').value;
+    if(team1score === '' || team2score === ''){
+        alert("Enter Score");
+        return;
+    }
+    if(teams[1].length === 0 && teams[2].length === 0){
+        alert('Empty Teams');
+        return;
+    }
     const match = {
         'match-notes' : document.getElementById('notes').value,
-        'team1' : {},
-        'team2' : {}
+        'team1' : {
+            'score' : team1score
+        },
+        'team2' : {
+            'score' : team2score
+        }
     };
     if(document.getElementById('team-1-won').checked){
-        
+        match.team1['won'] = true;
+        match.team2['won'] = false;
+    }else if(document.getElementById('team-2-won').checked){
+        match.team2['won'] = true;
+        match.team1['won'] = false;
+    }else{
+        alert('Did not select Winner');
+        return;
     }
+    match.team1['players'] = teams[1];
+    match.team2['players'] = teams[2];
+    //match object should be added to db and button should route back to game page
+    console.log(match);
 });
 
 
