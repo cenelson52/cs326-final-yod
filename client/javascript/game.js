@@ -2,7 +2,13 @@
 
 
 //retrieve the game
-let game = games[0];//temp
+//let game = games[0];//temp
+
+const games = await fetch("/games");
+if (!gamest.ok) {
+    console.log(games.error);
+    return;
+}
 
 document.getElementById('titlespot').innerText = game.name;
 

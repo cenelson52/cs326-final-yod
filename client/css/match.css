@@ -1,6 +1,6 @@
 .selected{
     background-color: cornflowerblue;
 }
-#submit{
-    align: middle;
+.team-player{
+    border : 1px solid black;
 }
