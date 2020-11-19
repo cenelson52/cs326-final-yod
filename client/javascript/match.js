@@ -23,6 +23,7 @@ function buildTeamPlayerDiv(player){
     const div = document.createElement('div');
     div.classList.add('team-player');
     div.classList.add('row-4');
+    div.setAttribute('id', player.name);
     div.innerText = player.name;
     const stats = document.createElement('div');
     stats.classList.add('player-stats');
@@ -61,6 +62,7 @@ function renderPlayers(){
         }
     }
     addSelection();
+    addTeamPlListener();
 }
 
 renderPlayers();
@@ -156,11 +158,21 @@ function fillgaps(arr){
     return r;
 }
 
+function matchPl(player){
+    const r = {};
+    r['name'] = player.name;
+    r['stats'] = {};
+    for(let i in game['custom-stats']){
+        r['stats'][game['custom-stats'][i]] = 0;
+    }
+    return r
+}
+
 document.getElementById('team1').addEventListener('click', () => {
     if(selectedplayer.div !== null){
         const pl = getPfromDiv(selectedplayer.div);
         teams[0][getIndex(teams[0], pl)] = null;
-        teams[1].push(pl);
+        teams[1].push(matchPl(pl));
         deselect();
     }
     renderPlayers();
@@ -170,11 +182,31 @@ document.getElementById('team2').addEventListener('click', () => {
     if(selectedplayer.div !== null && selectedplayer.team !== teams[2]){
         const pl = getPfromDiv(selectedplayer.div);
         teams[0][getIndex(teams[0], pl)] = null;
-        teams[2].push(pl);
+        teams[2].push(matchPl(pl));
         deselect();
     }
     renderPlayers();
 });
+
+
+function addTeamPlListener(){
+    const teamPl = document.getElementsByClassName('team-player');
+
+    for(let i = 0; i < teamPl.length; i++){
+        teamPl[i].addEventListener('click', () => {
+            document.getElementById('stat-space').innerHTML = teamPl[i].id + "<br>";
+            // const name = document.createElement('div');
+            // name.innerText = teamPl[i].id;
+            for(let j in game['custom-stats']){
+                document.getElementById('stat-space').innerHTML += "<label for id = '" + game['custom-stats'][j] +"-box' >" + game['custom-stats'][j] + "</label>";
+                document.getElementById('stat-space').innerHTML += "<input type = 'number' id =" + game['custom-stats'][j] +"-box' >";
+            }
+
+        });
+    }
+}
+
+
 
 document.getElementById('submit').addEventListener('click', () => {
     const match = {
@@ -186,3 +218,5 @@ document.getElementById('submit').addEventListener('click', () => {
         
     }
 });
+
+
