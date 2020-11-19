@@ -1,11 +1,8 @@
-/*
 'use strict'
 
-//not entirely sure what to do with the searchbar
+const matches = await fetch("/match");
 
-const matches = **HOWEVER WE GET A LIST OF RECENT MATCHES**
-
-const games = **However we get a list of all games**
+const games = await fetch("/getgames");
 
 function renderGames(element){
     for(const x in games){
@@ -30,4 +27,3 @@ window.onload(()=>
     renderGames(document.getElementById("fullgamelist"));
     renderMatches(document.getElementById("resultgamelist"));
 );
-*/
