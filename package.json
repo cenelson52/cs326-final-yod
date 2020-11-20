@@ -1,0 +1,22 @@
+
+
+{
+  "name": "yod",
+  "version": "0.3.0",
+  "description": "",
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "engines": {
+    "node": "15.2.1"
+  },
+  "author": "",
+  "license": " ",
+  "dependencies": {
+      "express": "^4.17.0"
+  },
+  "devDependencies": {
+     "http-server": "^0.12.3"
+  }
+}
+
