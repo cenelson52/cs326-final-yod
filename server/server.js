@@ -1,11 +1,25 @@
+
 import {createServer} from 'http';
 import {parse} from 'url';
+<<<<<<< HEAD
 import pkg from 'pg';
 const {Client} = pkg;
 import * as MiniCrypt from './miniCrypt.js';
 const database = new Client(process.env.DATABASE_URL);
 database.connect;
 const crypt = MiniCrypt;
+=======
+import {writeFile, readFileSync, existsSync} from 'fs';
+import * as pg from "pg";
+import "miniCrypt.js";
+import miniCrypt from './miniCrypt';
+import { response } from 'express';
+const database = new pg.Client(process.env.DATABASE_URL);
+database.connect();
+const crypt = new miniCrypt();
+const app = express();
+const path = require('path');
+>>>>>>> eb7150da6cd38c611e923d0b76839e3700217628
 
 createServer(async (req, res) => {
     const parsed = parse(req.url, true);
