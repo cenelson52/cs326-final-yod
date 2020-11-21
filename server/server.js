@@ -1,24 +1,11 @@
 import {createServer} from 'http';
 import {parse} from 'url';
 import * as _express from "express";
-//import * as faker from "faker";
 import {writeFile, readFileSync, existsSync} from 'fs';
-const path = require('path');
-
 const database = require("node")
 const app = express();
 
-/*
-let database;
-if (existsSync("database.json")) {
-    database = JSON.parse(readFileSync("database.json"));
-} else {
-    database = {
-        accounts: [],
-        games: []
-    };
-}
-*/
+const database = fetch(DATABASE_URL);
 
 createServer(async (req, res) => {
     const parsed = parse(req.url, true);
