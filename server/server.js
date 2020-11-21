@@ -15,7 +15,7 @@ createServer(async (req, res) => {
     //this might
     if(parsed.pathname === '/'){
         res.writeHead(200, { 'content-type': 'text/html' });
-        fs.createReadStream('login.html').pipe(res);
+        fs.createReadStream('..\client\login.html').pipe(res);
     }
     else if(parsed.pathname === '/getgames'){
         database.query();//SELECTs the games that are associated w/ a given user
