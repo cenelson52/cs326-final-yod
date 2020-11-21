@@ -1,3 +1,4 @@
+
 import {createServer} from 'http';
 import {parse} from 'url';
 import {writeFile, readFileSync, existsSync} from 'fs';
@@ -8,6 +9,8 @@ import { response } from 'express';
 const database = new pg.Client(process.env.DATABASE_URL);
 database.connect();
 const crypt = new miniCrypt();
+const app = express();
+const path = require('path');
 
 createServer(async (req, res) => {
     const parsed = parse(req.url, true);
