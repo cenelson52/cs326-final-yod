@@ -5,7 +5,7 @@
     - secrets.json + .gitignore
     - Markdown doc (Server Documentation, Heroku Link, Division of Labor)
     - Database Setup
-    - 
+    - Database -> server connection
 
 - Connor Nelson
     - Finished front-end work missing from milestone 2
@@ -21,7 +21,7 @@
 |---------------|--------------|-----------|--------------------------------|
 | User ID       | userid       | Integer   | ID for the user                |
 | Username      | username     | Text      | Name set by user               |
-| Password      | password     | Text      | (Encoded) password             |
+| Password      | password     | Text[]   | Salt & (encoded) password      |
 | Date of Birth | dob          | Text      | Date of birth                  |
 | Game IDs      | gameids      | Text[]    | Holds ids for the user's games |
 
