@@ -1,34 +1,26 @@
 
 import {createServer} from 'http';
 import {parse} from 'url';
-import {writeFile, readFileSync, existsSync} from 'fs';
-import * as pg from "pg";
-import "miniCrypt.js";
-import miniCrypt from './miniCrypt';
-import { response } from 'express';
-const database = new pg.Client(process.env.DATABASE_URL);
-database.connect();
-const crypt = new miniCrypt();
-const app = express();
-const path = require('path');
+import pkg from 'pg';
+const {Client} = pkg;
+import * as MiniCrypt from './miniCrypt.js';
+const database = new Client(process.env.DATABASE_URL);
+database.connect;
+const crypt = MiniCrypt;
 
 createServer(async (req, res) => {
     const parsed = parse(req.url, true);
     //TODO
     if(parsed.pathname === '/getgames'){
-        res.end(JSON.stringify());
-    }
+        database.query();//SELECTs the games that are associated w/ a given user
+    }//TODO
     else if(parsed.pathname === '/game'){
-        for(let x = 0; x < file.games.length; x++){
-            if(file.games[x].name === req.game){
-                res.end(JSON.stringify(file.games[x]));
-            }
-        }
-        res.end("no game");
-    }
+        database.query();//SELECTs the right game from a user's games
+    }//TODO
     else if(parsed.pathname === '/creategame'){
-        //TODO
-    }
+        database.query();//One to add it to the user's game ids
+        database.query();//One to add it to the game table
+    }//TODO
     else if(parsed.pathname === '/match'){//returns array of matches based off of a given game
         if (! "game" in req.body){
             const matches = [];
@@ -55,4 +47,5 @@ createServer(async (req, res) => {
         database.query(`INSERT INTO user_table (username, password, dob, games) VALUES (${req.data.username}, ${crypt.prototype.hash(req.data)}, ${req.data.dob}, ${req.data.games}`);
         //idk how to auto-login after this finishes, but this is what the internet tells me to do for the database queries
         res.end();
+    }
 }).listen(process.env.PORT || 8080);
