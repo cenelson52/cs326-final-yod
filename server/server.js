@@ -4,7 +4,7 @@ import {parse} from 'url';
 import pkg from 'pg';
 const {Client} = pkg;
 import * as MiniCrypt from './miniCrypt.js';
-const fs = require('fs');
+//const fs = require('fs')
 const database = new Client(process.env.DATABASE_URL);
 database.connect;
 const crypt = MiniCrypt;
@@ -12,7 +12,7 @@ const crypt = MiniCrypt;
 createServer(async (req, res) => {
     const parsed = parse(req.url, true);
     //TODO
-    //this might not work
+    //this might
     if(parsed.pathname === '/'){
         res.writeHead(200, { 'content-type': 'text/html' });
         fs.createReadStream('login.html').pipe(res);
