@@ -6,7 +6,6 @@ import {writeFile, readFileSync, existsSync} from 'fs';
 const path = require('path');
 
 const database = require("node")
-//const file = await fetch("/database.json");
 const app = express();
 
 /*
