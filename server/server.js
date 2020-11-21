@@ -1,29 +1,19 @@
 import {createServer} from 'http';
 import {parse} from 'url';
-import * as _express from "express";
-//import * as faker from "faker";
 import {writeFile, readFileSync, existsSync} from 'fs';
-const path = require('path');
-
-const database = require("node")
-const app = express();
-
-/*
-let database;
-if (existsSync("database.json")) {
-    database = JSON.parse(readFileSync("database.json"));
-} else {
-    database = {
-        accounts: [],
-        games: []
-    };
-}
-*/
+import * as pg from "pg";
+import "miniCrypt.js";
+import miniCrypt from './miniCrypt';
+import { response } from 'express';
+const database = new pg.Client(process.env.DATABASE_URL);
+database.connect();
+const crypt = new miniCrypt();
 
 createServer(async (req, res) => {
     const parsed = parse(req.url, true);
+    //TODO
     if(parsed.pathname === '/getgames'){
-        res.end(JSON.stringify(file.games));
+        res.end(JSON.stringify());
     }
     else if(parsed.pathname === '/game'){
         for(let x = 0; x < file.games.length; x++){
@@ -59,20 +49,7 @@ createServer(async (req, res) => {
     }
     else if(parsed.pathname === '/createaccount'){
         //not sure if this actually works correctly
-        let body = '';
-        req.on('data', data => body += data);
-        req.on('end', () => {
-            const data = JSON.parse(body);
-            file.accounts.push({
-                username: data.username,
-                password: data.password,
-                email: data.email,
-                DoB: data.DoB
-            });
-            writeFile(file, JSON.stringify(file), err => {
-                if (err) {
-                    console.err(err);
-                } else res.end();
-            });
-        });
+        database.query(`INSERT INTO user_table (username, password, dob, games) VALUES (${req.data.username}, ${crypt.prototype.hash(req.data)}, ${req.data.dob}, ${req.data.games}`);
+        //idk how to auto-login after this finishes, but this is what the internet tells me to do for the database queries
+        res.end();
 }).listen(process.env.PORT || 8080);
