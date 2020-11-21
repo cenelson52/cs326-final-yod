@@ -32,18 +32,17 @@ createServer(async (req, res) => {
             res.end(JSON.stringify(file.games.matches));
         }
     }
-    else if(parsed.pathname === '/creatematch'){//idk how to update an existing game unless we have an actual active database, which we do not :(
+    else if(parsed.pathname === '/creatematch'){//idk how to update an existing game unless we have an actual active database, which we do not
         //TODO
     }
-    else if(parsed.pathname === '/account'){
+    else if(parsed.pathname === '/account'){//TODO
         res.end(JSON.stringify(
-            //TODO: THIS IS CONNECTED WITH THE LOGIN.
             file.accounts
         ));
     }
     else if(parsed.pathname === '/createaccount'){
         //not sure if this actually works correctly
-        database.query(`INSERT INTO user_table (username, password, dob, games) VALUES (${req.data.username}, ${crypt.prototype.hash(req.data)}, ${req.data.dob}, ${req.data.games}`);
+        database.query(`INSERT INTO user_table (username, password, dob, games) VALUES (${req.data.username}, ${crypt.prototype.hash(req.data)}, ${req.data.dob}, ${req.data.games})`);
         //idk how to auto-login after this finishes, but this is what the internet tells me to do for the database queries
         res.end();
     }
