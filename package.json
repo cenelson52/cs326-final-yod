@@ -2,6 +2,7 @@
   "name": "yod",
   "version": "0.3.0",
   "description": "GameTracker",
+  "type": "module",
   "scripts": {
     "start": "node server/server.js"
   },
