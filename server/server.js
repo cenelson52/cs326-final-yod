@@ -2,11 +2,10 @@ import {createServer} from 'http';
 import {parse} from 'url';
 import pkg from 'pg';
 const {Client} = pkg;
-import { miniCryptFunction } from './miniCrypt.js';
-miniCryptFunction();
+import * as MiniCrypt from './miniCrypt.js';
 const database = new Client(process.env.DATABASE_URL);
 database.connect;
-const crypt = new MiniCrypt();
+const crypt = MiniCrypt;
 
 createServer(async (req, res) => {
     const parsed = parse(req.url, true);
