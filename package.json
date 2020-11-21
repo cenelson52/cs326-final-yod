@@ -9,7 +9,7 @@
     "node": "15.2.1"
   },
   "author": "",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "dependencies": {
     "express": "^4.17.1"
   },
