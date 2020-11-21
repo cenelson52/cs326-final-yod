@@ -17,30 +17,30 @@
 ## Server Documentation
 
 ### User Table
-| Column        | Counter Name | Data Type      | Description                    |
-|---------------|--------------|----------------|--------------------------------|
-| User ID       | userid       | Integer        | ID for the user                |
-| Username      | username     | String         | Name set by user               |
-| Password      | password     | String         | (Encoded) password             |
-| Date of Birth | dob          | String         | Date of birth                  |
-| Game IDs      | gameids      | Array (INT)    | Holds ids for the user's games |
+| Column        | Counter Name | Data Type | Description                    |
+|---------------|--------------|-----------|--------------------------------|
+| User ID       | userid       | Integer   | ID for the user                |
+| Username      | username     | Text      | Name set by user               |
+| Password      | password     | Text      | (Encoded) password             |
+| Date of Birth | dob          | Text      | Date of birth                  |
+| Game IDs      | gameids      | Text[]    | Holds ids for the user's games |
 
 ### Game Table
-| Column        | Counter Name | Data Type      | Description                    |
-|---------------|--------------|----------------|--------------------------------|
-| Game ID       | gameid       | Integer        | ID for the game                |
-| Game Name     | name         | String         | Name of the game               |
-| Description   | desc         | String         | Short description of game      |
-| Matches       | matches      | Array (INT)    | All matches for the game       |
-| Stats         | stats        | Array (STRING) | Custom statistics for matches  |
+| Column        | Counter Name | Data Type | Description                    |
+|---------------|--------------|-----------|--------------------------------|
+| Game ID       | gameid       | Integer   | ID for the game                |
+| Game Name     | name         | Text      | Name of the game               |
+| Description   | descrip      | Text      | Short description of game      |
+| Matches       | matches      | Integer[] | All matches for the game       |
+| Stats         | stats        | Text[]    | Custom statistics for matches  |
 
 
  ### Match Table
-| Column        | Counter Name | Data Type      | Description                    |
-|---------------|--------------|----------------|--------------------------------|
-| Match ID      | matchid      | Integer        | ID for the match               |
-| Game ID       | gameid       | Integer        | ID for game it belongs to      |
-| Match Object  | match        | Object         | Match object containing info   |
+| Column        | Counter Name | Data Type | Description                    |
+|---------------|--------------|-----------|--------------------------------|
+| Match ID      | matchid      | Integer   | ID for the match               |
+| Game ID       | gameid       | Integer   | ID for game it belongs to      |
+| Match Object  | match        | Text      | Match object containing info   |
 
 
 ## [Heroku Link](https://cs326final-yod.herokuapp.com/)
