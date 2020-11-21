@@ -10,12 +10,13 @@
 ​
   If you'd like to learn more about the theory and maths behind cryptography, then take 466 next semester. Great professor.
  */
-const c = require('crypto');
+import * as c from 'crypto';
 /**
   @module miniCrypt
   @desc A tiny crypto lib for the 326 kids.
  */
-module.exports = (function() {
+
+export function miniCryptFunction() {
   /**
     @constructor
     @arg {number} its - The number of iterations to be performed; higher iterations means more security but slower speed.
@@ -30,7 +31,6 @@ module.exports = (function() {
     this.saltL = saltL;
     this.digest = digest;
   }
-​
   /**
     @public
     @memberof MiniCrypt
@@ -43,7 +43,6 @@ module.exports = (function() {
           hash = c.pbkdf2Sync(pw, salt, this.its, this.keyL, this.digest).toString('hex'); // hash the pw
     return [salt, hash]; // return the pair for safe storage
   };
-​
   /**
     @public
     @memberof MiniCrypt
@@ -56,6 +55,5 @@ module.exports = (function() {
   MiniCrypt.prototype.check = function(pw, salt, hash) {
     return c.timingSafeEqual(c.pbkdf2Sync(pw, salt, this.its, this.keyL, this.digest), Buffer.from(hash, 'hex'));
   };
-​
   return MiniCrypt;
-}());
+};
