@@ -1,16 +1,15 @@
 import {createServer} from 'http';
 import {parse} from 'url';
-import * as _express from "express";
 import {writeFile, readFileSync, existsSync} from 'fs';
-const database = require("node")
-const app = express();
-
-const database = fetch(DATABASE_URL);
+import * as pg from "pg";
+const database = new pg.Client(process.env.DATABASE_URL);
+database.connect();
 
 createServer(async (req, res) => {
     const parsed = parse(req.url, true);
     if(parsed.pathname === '/getgames'){
-        res.end(JSON.stringify(file.games));
+        
+        res.end(JSON.stringify());
     }
     else if(parsed.pathname === '/game'){
         for(let x = 0; x < file.games.length; x++){
