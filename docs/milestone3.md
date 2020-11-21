@@ -10,7 +10,8 @@
 
 - Connor Nelson
     - Finished front-end work missing from milestone 2
-    - 
+    - Fixed Heroku issues
+    - Added missing HTML
     - 
     
 - Dang Le Nguyen
