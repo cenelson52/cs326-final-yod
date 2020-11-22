@@ -9,7 +9,7 @@ import {join} from 'path';
 app.use(express.static('./client'));
 
 app.get("/", function(req, res, next){
-    req.url = "/login.html";
+    res.redirect('/login.html');
     next();
 });
 
