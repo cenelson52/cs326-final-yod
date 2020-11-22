@@ -9,13 +9,20 @@ const database = new Client(process.env.DATABASE_URL);
 database.connect;
 const crypt = MiniCrypt;
 
+
+
+
 createServer(async (req, res) => {
     const parsed = parse(req.url, true);
     //TODO
     //this might
     if(parsed.pathname === '/'){
-        res.writeHead(200, { 'content-type': 'text/html' });
-        fs.createReadStream('../client/login.html').pipe(res);
+        console.log('hello');
+        fs.readFile("./client/login.html", function (err, data) {
+            res.writeHead(200, {'Content-Type': 'text/html'});
+            res.write(data);
+            res.end();
+         });
     }
     else if(parsed.pathname === '/getgames'){
         database.query();//SELECTs the games that are associated w/ a given user
