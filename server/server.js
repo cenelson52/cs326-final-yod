@@ -14,9 +14,9 @@ app.get("/", function(req, res, next){
 });
 
 app.get("/accountcreate", function(req, res, next){
-    console.log('before redirect');
+    //console.log('before redirect');
     res.redirect('/accountcreate.html');
-    console.log('after redirect');
+    //console.log('after redirect');
     next();
 });
 

@@ -17,13 +17,7 @@ document.getElementById('login-btn').addEventListener('click', () => {
     //route to homepage
 });
 
-<<<<<<< HEAD
 document.getElementById('signup-btn').addEventListener('click', async () => {
     window.location.href = "/accountcreate.html";
 
 });
-=======
-document.getElementById('signup-btn').addEventListener('click', () => {
-    //route to create account
-});
->>>>>>> origin/master
