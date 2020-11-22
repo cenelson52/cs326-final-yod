@@ -5,25 +5,23 @@ import pkg from 'pg';
 const {Client} = pkg;
 import * as MiniCrypt from './miniCrypt.js';
 import * as fs from "fs";
+import * as _express from "express";
+const express = _express["default"];
+const app = express();
 const database = new Client(process.env.DATABASE_URL);
 database.connect;
 const crypt = MiniCrypt;
-
-
-
 
 createServer(async (req, res) => {
     const parsed = parse(req.url, true);
     //TODO
     //this might
     if(parsed.pathname === '/'){
-
-        fs.readFile("./client/login.html", function (err, data) {
+        fs.readFileSync("./client/login.html", function (err, data) {
             res.writeHead(200, {'Content-Type': 'text/html'});
             res.write(data);
             res.end();
          });
-
     }
     else if(parsed.pathname === '/getgames'){
         database.query();//SELECTs the games that are associated w/ a given user
