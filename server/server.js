@@ -6,7 +6,7 @@ import pkg from 'pg';
 const app = express();
 import {join} from 'path';
 
-app.use(express.static('../client'));
+app.use(express.static('./client'));
 
 
 app.listen(process.env.PORT || 8080);
