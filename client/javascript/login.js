@@ -17,4 +17,6 @@ document.getElementById('login-btn').addEventListener('click', () => {
 
 document.getElementById('signup-btn').addEventListener('click', () => {
     //route to create account
+    res.redirect('/accountcreate.html');
+    next();
 });
