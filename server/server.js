@@ -17,9 +17,11 @@ createServer(async (req, res) => {
     //TODO
     //this might
     if(parsed.pathname === '/'){
-        res.writeHead(200, { 'content-type': 'text/html' });
-        app.get(res.sendFile('../client/login.html'));
-        res.end();
+        fs.readFileSync("./client/login.html", function (err, data) {
+            res.writeHead(200, {'Content-Type': 'text/html'});
+            res.write(data);
+            res.end();
+         });
     }
     else if(parsed.pathname === '/getgames'){
         database.query();//SELECTs the games that are associated w/ a given user
