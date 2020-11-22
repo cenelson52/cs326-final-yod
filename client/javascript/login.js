@@ -1,5 +1,7 @@
 'use strict'
 
+
+
 document.getElementById('login-btn').addEventListener('click', () => {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
@@ -15,6 +17,7 @@ document.getElementById('login-btn').addEventListener('click', () => {
     //route to homepage
 });
 
-document.getElementById('signup-btn').addEventListener('click', () => {
-    //route to create account
+document.getElementById('signup-btn').addEventListener('click', async () => {
+    window.location.href = "/accountcreate.html";
+
 });

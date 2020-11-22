@@ -1,12 +1,12 @@
 'use strict'
 
-const accountlist = await fetch("/account");
-if (!accountlist.ok) {
-    console.log(accountlist.error);
-    return;
-}
+// const accountlist = await fetch("/account");
+// if (!accountlist.ok) {
+//     console.log(accountlist.error);
+//     return;
+// }
 
-document.getElementById('create-account').addEventListener('click', () => {
+document.getElementById('create-account').addEventListener('click', async () => {
     
     if(document.getElementById("account-username").value === '' ){
         alert('No username entered!');
