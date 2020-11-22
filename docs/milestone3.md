@@ -6,8 +6,7 @@
     - Markdown doc (Server Documentation, Heroku Link, Division of Labor)
     - Database Setup
     - Database -> server connection
-    - Adding and using miniCrypt.js
-    - Passport.js functionality
+    - Adding and using miniCrypt.js / Passport.js
     - 
 
 - Connor Nelson

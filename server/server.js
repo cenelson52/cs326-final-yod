@@ -24,7 +24,6 @@ passport.use(new localStrat(
     }
   ));
 
-
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -70,8 +69,14 @@ app.get("/homepage.html", function(req, res, next){
 
 app.post("/login", function(req, res){
     passport.authenticate('local', callback(err, user, info));
-
+    //NOT DONE
 })
+
+app.get("/getgames", function(req, res){
+    //TODO: ADD WAY TO GET USERNAME
+    const games = database.query(`SELECT * FROM game_table WHERE userid = ${req.data.username}`);
+    res.body.add(JSON.stringify(games));
+});
 
 
 
@@ -81,34 +86,9 @@ app.post("/login", function(req, res){
 
 app.listen(process.env.PORT || 8080);
 
-
-// import {createServer} from 'http';
-// import {parse} from 'url';
-// import pkg from 'pg';
-// const {Client} = pkg;
-// import * as MiniCrypt from './miniCrypt.js';
-// import * as fs from "fs";
-// const database = new Client(process.env.DATABASE_URL);
-// database.connect;
-// const crypt = MiniCrypt;
-
-
-
-
 // createServer(async (req, res) => {
 //     const parsed = parse(req.url, true);
-//     //TODO
-//     //this might
-//     if(parsed.pathname === '/'){
-
-//         fs.readFile("./client/login.html", function (err, data) {
-//             res.writeHead(200, {'Content-Type': 'text/html'});
-//             res.write(data);
-//             res.end();
-//          });
-
-//     }
-//     else if(parsed.pathname === '/getgames'){
+//     if(parsed.pathname === '/getgames'){
 //         database.query();//SELECTs the games that are associated w/ a given user
 //     }//TODO
 //     else if(parsed.pathname === '/game'){
