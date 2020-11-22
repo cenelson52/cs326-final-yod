@@ -13,6 +13,11 @@ app.get("/", function(req, res, next){
     next();
 });
 
+app.get("/accountcreate.html", function(req, res, next){
+    res.redirect('/accountcreate.html');
+    next();
+});
+
 app.listen(process.env.PORT || 8080);
 
 
