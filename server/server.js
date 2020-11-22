@@ -6,11 +6,11 @@ import pkg from 'pg';
 const app = express();
 import {join} from 'path';
 
-app.use(express.static('../client'));
+app.use(express.static('./client'));
 
-app.get('/', function(req, res){
-    document.location = `${document.URL}/login.html`;
-    res.end();
+app.get("/", function(req, res, next){
+    req.url = "/login.html";
+    next();
 });
 
 app.listen(process.env.PORT || 8080);
