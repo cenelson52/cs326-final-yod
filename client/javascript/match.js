@@ -250,6 +250,7 @@ document.getElementById('submit').addEventListener('click', () => {
     match.team2['players'] = teams[2];
     //match object should be added to db and button should route back to game page
     console.log(match);
+    window.location.href = "/game.html";
 });
 
 
