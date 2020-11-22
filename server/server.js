@@ -17,7 +17,7 @@ createServer(async (req, res) => {
     //TODO
     //this might
     if(parsed.pathname === '/'){
-        fs.readFileSync("./client/login.html", function (err, data) {
+        fs.readFile("./client/login.html", function (err, data) {
             res.writeHead(200, {'Content-Type': 'text/html'});
             res.write(data);
             res.end();
