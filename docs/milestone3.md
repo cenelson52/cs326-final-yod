@@ -13,8 +13,8 @@
     - Finished front-end work missing from milestone 2
     - Fixed Heroku issues
     - Added missing HTML
-    - 
-    - 
+    - Express
+    - Help with database design
     
 - Dang Le Nguyen
     - package.json
