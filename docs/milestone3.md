@@ -7,6 +7,7 @@
     - Database Setup
     - Database -> server connection
     - Adding and using miniCrypt.js
+    - 
 
 - Connor Nelson
     - Finished front-end work missing from milestone 2
@@ -36,7 +37,6 @@
 | Description   | descrip      | Text      | Short description of game      |
 | Matches       | matches      | Integer[] | All matches for the game       |
 | Stats         | stats        | Text[]    | Custom statistics for matches  |
-
 
  ### Match Table
 | Column        | Counter Name | Data Type | Description                    |

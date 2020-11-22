@@ -5,8 +5,6 @@ import pkg from 'pg';
 const {Client} = pkg;
 import * as MiniCrypt from './miniCrypt.js';
 import * as fs from "fs";
-import * as _express from "express";
-const app = _express.express();
 const database = new Client(process.env.DATABASE_URL);
 database.connect;
 const crypt = MiniCrypt;
