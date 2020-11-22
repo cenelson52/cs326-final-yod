@@ -35,8 +35,10 @@ app.get("/", function(req, res, next){
     next();
 });
 
-app.get("/accountcreate.html", function(req, res, next){
+app.get("/accountcreate", function(req, res, next){
+    //console.log('before redirect');
     res.redirect('/accountcreate.html');
+    //console.log('after redirect');
     next();
 });
 

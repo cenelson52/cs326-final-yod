@@ -33,6 +33,7 @@ document.getElementById('newgamebtn').addEventListener('click', () => {
         console.log(game);
 
         //this is where the game will be saved into db
+        window.location.href = "/game.html";
     }
-    //needs to lead to game page
+    
 });
