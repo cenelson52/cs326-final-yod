@@ -5,11 +5,8 @@ import pkg from 'pg';
 const app = express();
 import {join} from 'path';
 
-app.use(express.static('cs326-final-yod'));
+app.use(express.static('../client'));
 
-app.get('/', (req,res) => {
-    res.send('hello');
-});
 
 
 
