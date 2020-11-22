@@ -5,6 +5,8 @@ import pkg from 'pg';
 const {Client} = pkg;
 import * as MiniCrypt from './miniCrypt.js';
 import * as fs from "fs";
+import * as _express from "express";
+const app = _express.express();
 const database = new Client(process.env.DATABASE_URL);
 database.connect;
 const crypt = MiniCrypt;
@@ -15,7 +17,8 @@ createServer(async (req, res) => {
     //this might
     if(parsed.pathname === '/'){
         res.writeHead(200, { 'content-type': 'text/html' });
-        fs.createReadStream('cs326-final-yod/client/login.html').pipe(res);
+        app.get(res.sendFile('../client/login.html'));
+        res.end();
     }
     else if(parsed.pathname === '/getgames'){
         database.query();//SELECTs the games that are associated w/ a given user
