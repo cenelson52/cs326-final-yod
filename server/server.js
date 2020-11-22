@@ -1,8 +1,32 @@
 import express from 'express';
 import {parse} from 'url';
 import pkg from 'pg';
+const {Client} = pkg;
 const app = express();
 import {join} from 'path';
+import passport from 'passport';
+import * as tempStrat from "passport-local";
+import * as MiniCrypt from './miniCrypt.js';
+const localStrat = tempStrat.Strategy;
+const crypt = MiniCrypt;
+const database = new Client(process.env.DATABASE_URL);
+database.connect;
+
+
+passport.use(new localStrat(
+    { usernameField: 'username' },
+    (username, password, done) => {
+      console.log('Inside local strategy callback')
+      const user = database.query(`SELECT 1 FROM user_table WHERE username = ${username})`);
+      if(username === user.username && crypt.check(user.password[0], user.password[1], password)){
+        return done(null, user)
+      }
+    }
+  ));
+
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(express.static('./client'));
 
@@ -44,7 +68,10 @@ app.get("/homepage.html", function(req, res, next){
     //Can't do this one yet as I need to be able to have our account's 
 });
 
+app.post("/login", function(req, res){
+    passport.authenticate('local', callback(err, user, info));
 
+})
 
 
 
