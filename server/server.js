@@ -8,10 +8,7 @@ import {join} from 'path';
 
 app.use(express.static('../client'));
 
-app.get('/', function(req, res){
-    document.location = `${document.URL}/login.html`;
-    res.end();
-})
+app.get('/',document.location = `${document.URL}/login.html`);
 
 app.listen(process.env.PORT || 8080);
 
