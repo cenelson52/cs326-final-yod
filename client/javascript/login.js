@@ -14,3 +14,7 @@ document.getElementById('login-btn').addEventListener('click', () => {
     //server stuff
     //route to homepage
 });
+
+document.getElementById('signup-btn').addEventListener('click', () => {
+    //route to create account
+});
