@@ -1,5 +1,3 @@
-
-
 import express from 'express';
 import {parse} from 'url';
 import pkg from 'pg';
@@ -45,6 +43,14 @@ app.get("/login.html", function(req, res, next){
 app.get("/homepage.html", function(req, res, next){
     //Can't do this one yet as I need to be able to have our account's 
 });
+
+
+
+
+
+
+
+
 
 app.listen(process.env.PORT || 8080);
 

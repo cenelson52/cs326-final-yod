@@ -2,17 +2,19 @@
 
 ## Division of Labor
 - Joseph O'Leary
-    - secrets.json + .gitignore
+    - .gitignore
     - Markdown doc (Server Documentation, Heroku Link, Division of Labor)
     - Database Setup
     - Database -> server connection
     - Adding and using miniCrypt.js
+    - Passport.js functionality
     - 
 
 - Connor Nelson
     - Finished front-end work missing from milestone 2
     - Fixed Heroku issues
     - Added missing HTML
+    - 
     - 
     
 - Dang Le Nguyen
