@@ -18,7 +18,8 @@
     - 
     
 - Dang Le Nguyen
-    - 
+    - package.json
+    - server.js
 
 ## Server Documentation
 
