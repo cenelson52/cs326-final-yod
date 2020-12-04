@@ -34,46 +34,6 @@ app.get("/", function(req, res, next){
     next();
 });
 
-app.get("/accountcreate", function(req, res, next){
-    //console.log('before redirect');
-    res.redirect('/accountcreate.html');
-    //console.log('after redirect');
-    next();
-});
-
-app.get("/gamecreate.html", function(req, res, next){
-    //Needs to verify that you're logged in
-    res.redirect('/gamecreate.html');
-    next();
-});
-
-app.get("/match.html", function(req, res, next){
-    //Verify necessary game id
-    res.redirect('/accountcreate.html');
-    next();
-});
-
-app.get("/account.html", function(req, res, next){
-    //Can't do this one yet as I need to be able to have our account's 
-});
-
-app.get("/game.html", function(req, res, next){
-    //Can't do this one yet as I need to be able to have our account's 
-});
-
-app.get("/login.html", function(req, res, next){
-    //Can't do this one yet as I need to be able to have our account's 
-});
-
-app.get("/homepage.html", function(req, res, next){
-    //Can't do this one yet as I need to be able to have our account's 
-});
-
-app.post("/login", function(req, res){
-    passport.authenticate('local', callback(err, user, info));
-    //NOT DONE
-})
-
 app.get("/getgames", function(req, res){
     //TODO: ADD WAY TO GET USERNAME
     const games = database.query(`SELECT * FROM game_table WHERE userid = ${req.data.username}`);
