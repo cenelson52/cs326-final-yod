@@ -107,7 +107,8 @@
     - package.json
     - Heroku
 - Connor Nelson
-    - Data Interactions on Markdown Doc
+    - Idea
+    - Markdown Doc
     - Wireframes
     - CSS
     - HTML for Homepage, GameCreate, Match
