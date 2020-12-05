@@ -10,37 +10,37 @@
 - Log in Page
     - A simple login page with sign up and login buttons.
 
-    ![Login Screenshot](./images/final/Login.png)
+    ![Login Screenshot](./images/final/Login.PNG)
 
 - Create Account Page
     - A straight forward account create page where you enter in basic information
 
-    ![Account Creation Screenshot](./images/final/createaccount.png)
+    ![Account Creation Screenshot](./images/final/createaccount.PNG)
 
 - Account page
     - Displays basic account information
 
-    ![Account Page Screenshot](./images/final/account.png)
+    ![Account Page Screenshot](./images/final/account.PNG)
 
 - Homepage
     - Shows you all of the games you've created that you can search through and shows recent matches played among all the games. Lets you create a match or click into any game you have.
 
-    ![Homepage Screenshot](./images/final/home.png)
+    ![Homepage Screenshot](./images/final/home.PNG)
 
 - Game Creation page
     - Allows user to enter title, description, and any number of custom stats.
 
-    ![Game Creation Screenshot](./images/final/gamecreate.png)
+    ![Game Creation Screenshot](./images/final/gamecreate.PNG)
 
 - Game Home
     - Has a list of players that you can add to as well as search through. Shows a list of all matches for this game and has a button for recording new matches.
 
-    ![Game Home Screenshot](./images/final/game.png)
+    ![Game Home Screenshot](./images/final/game.PNG)
 
 - Match Recording Page
     - This page allows you to enter all the information for a match. Players from the game can be selected and put into one of the two teams and if you click on the player once their on a team, you can edit their stats for this match. A description/notes about the match can be written and info about the score and who won are also recorded.
 
-    ![Match Recording Screenshot](./images/final/match.png)
+    ![Match Recording Screenshot](./images/final/match.PNG)
 
 
 ## APIs:
