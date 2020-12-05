@@ -43,6 +43,11 @@ For our project, we created a game tracker that allows users to create an accoun
     ![Match Recording Screenshot](./images/final/match.PNG)
 
 ## APIs:
+| Name                      | Description |
+| getGames                      | Returns a list of games for the signed in user |
+| game                     | Returns the game specified from the database |
+| creategame                     | Takes in Data from game creation page and adds it to the database |
+
 
 ## Database:
 
