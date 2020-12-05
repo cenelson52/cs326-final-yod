@@ -127,3 +127,4 @@ Through the process of this project, our group got a lot of practice with HTML a
 
 ## [Group Rubric](https://docs.google.com/document/d/19Is_zDfItgZADYcGi1ZmJDmwcIfuEcGv_xT66GCTLm4/edit?usp=sharing)
 
+## [Video](https://www.youtube.com/watch?v=rCt4kR0RrAo&feature=youtu.be)
