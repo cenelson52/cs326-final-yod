@@ -89,6 +89,7 @@ When a player creates an account, their password is hashed using miniCrypt.js an
 ## Division of Labor
 - Joseph O'Leary
     - Markdown docs
+    - Group grading rubric
     - CSS
     - HTML on Homepage, GameCreate, Match, and Game
     - Javascript for server.js, accountcreate.js, homepage.js
@@ -118,4 +119,6 @@ When a player creates an account, their password is hashed using miniCrypt.js an
 Through the process of this project, our group got a lot of practice with HTML and Javascript, along with the API processes that allowed us to create our server. There were some areas where we struggled, one of which being the implementation of Passport.js and authentication, which made it difficult to finish with the final APIs and connecting the server to our database. We also had a fair amount of difficulties successfully deploying to heroku, but we ended up figuring it out. Something we would've liked to know earlier is how much of a time commitment that this project would be, overall our time management was lacking.
 
 ## [Heroku Link](https://cs326final-yod.herokuapp.com/)
+
+## [Group Rubric](https://docs.google.com/document/d/19Is_zDfItgZADYcGi1ZmJDmwcIfuEcGv_xT66GCTLm4/edit?usp=sharing)
 
