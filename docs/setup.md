@@ -2,5 +2,4 @@
 
 npm intall
 
-
-
+npm start
