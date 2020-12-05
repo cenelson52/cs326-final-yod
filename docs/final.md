@@ -42,6 +42,7 @@
 ## URL Routes / Mapping
 
 ## Authentication/Authorization
+    When a player creates an account, their password is hashed using miniCrypt.js and stored in the database along with the rest of their account information. When attempting to log in with that user, the hashed password, along with it's hash, is passed through the appropriate Passport.js processes in order to authenticate that user. The user would stay logged in and authenitcated until logged out, and a user must be authenticated in order to access any data associated with that user. Unfortunately, the authentication system wasn't finished in time for the due date, and isn't fully implemented.
 
 ## Division of Labor
 - Joseph O'Leary
