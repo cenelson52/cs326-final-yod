@@ -54,9 +54,21 @@
     - Starting miniCrypt.js + Passport.js
     - Heroku
 - Dang Le Nguyen
-    - 
+    - Wireframes
+    - CSS
+    - HTML for Account, AccountCreate
+    - server.js, database.js, dataExs.js
+    - account.js, accountcreate.js
+    - package.json
+    - Heroku
 - Connor Nelson
-    - 
+    - Data Interactions on Markdown Doc
+    - Wireframes
+    - CSS
+    - HTML for Homepage, GameCreate, Match
+    - gamecreate.js, game.js, match.js
+    - server.js, dataExs.js
+    - Heroku
 
 ## Conclusion
 
