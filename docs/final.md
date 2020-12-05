@@ -4,7 +4,7 @@
 - Conner Nelson (cenelson52), Joseph O'Leary (jpoleary), Dang Le Nguyen (dang592)
 
 ## Overview:
-    For our project, we created a game tracker that allows users to create an account, create games w/ custom statistics, and create and track matches, teams, and players through each game. This allows users to decide exactly what they wish to track for their own performance, as well as others, and shape their experience accordingly.
+For our project, we created a game tracker that allows users to create an account, create games w/ custom statistics, and create and track matches, teams, and players through each game. This allows users to decide exactly what they wish to track for their own performance, as well as others, and shape their experience accordingly.
 
 ## User Interface:
 
@@ -40,7 +40,7 @@
 ## URL Routes / Mapping
 
 ## Authentication/Authorization
-    When a player creates an account, their password is hashed using miniCrypt.js and stored in the database along with the rest of their account information. When attempting to log in with that user, the hashed password, along with it's hash, is passed through the appropriate Passport.js processes in order to authenticate that user. The user would stay logged in and authenitcated until logged out, and a user must be authenticated in order to access any data associated with that user. Unfortunately, the authentication system wasn't finished in time for the due date, and isn't fully implemented.
+When a player creates an account, their password is hashed using miniCrypt.js and stored in the database along with the rest of their account information. When attempting to log in with that user, the hashed password, along with it's hash, is passed through the appropriate Passport.js processes in order to authenticate that user. The user would stay logged in and authenitcated until logged out, and a user must be authenticated in order to access any data associated with that user. Unfortunately, the authentication system wasn't finished in time for the due date, and isn't fully implemented.
 
 ## Division of Labor
 - Joseph O'Leary
@@ -70,7 +70,7 @@
     - Heroku
 
 ## Conclusion
-    Through the process of this project, our group got a lot of practice with HTML and Javascript, along with the API processes that allowed us to create our server. There were some areas where we struggled, one of which being the implementation of Passport.js and authentication, which made it difficult to finish with the final APIs and connecting the server to our database. We also had a fair amount of difficulties successfully deploying to heroku, but we ended up figuring it out.
+Through the process of this project, our group got a lot of practice with HTML and Javascript, along with the API processes that allowed us to create our server. There were some areas where we struggled, one of which being the implementation of Passport.js and authentication, which made it difficult to finish with the final APIs and connecting the server to our database. We also had a fair amount of difficulties successfully deploying to heroku, but we ended up figuring it out.
 
 ## [Heroku Link](https://cs326final-yod.herokuapp.com/)
 
