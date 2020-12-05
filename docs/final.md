@@ -56,10 +56,17 @@
     - CSS
     - HTML for Account, AccountCreate
     - server.js, database.js, dataExs.js
-    - tourney.js, tourneycreate.js, account.js, accountcreate.js
+    - account.js, accountcreate.js
     - package.json
+    - Heroku
 - Connor Nelson
-    - 
+    - Data Interactions on Markdown Doc
+    - Wireframes
+    - CSS
+    - HTML for Homepage, GameCreate, Match
+    - gamecreate.js, game.js, match.js
+    - server.js, dataExs.js
+    - Heroku
 
 ## Conclusion
 
