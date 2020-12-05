@@ -42,9 +42,7 @@
 
     ![Match Recording Screenshot](./images/final/match.PNG)
 
-
 ## APIs:
-
 
 ## Database:
 
@@ -117,6 +115,7 @@
     - Heroku
 
 ## Conclusion
+    Through the process of this project, our group got a lot of practice with HTML and Javascript, along with the API processes that allowed us to create our server. There were some areas where we struggled, one of which being the implementation of Passport.js and authentication, which made it difficult to finish with the final APIs and connecting the server to our database. We also had a fair amount of difficulties successfully deploying to heroku, but we ended up figuring it out.
 
 ## [Heroku Link](https://cs326final-yod.herokuapp.com/)
 
